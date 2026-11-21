@@ -1,11 +1,6 @@
 <?php
 declare(strict_types=1);
 
-/**
- * HEISVERSE — Database Connection Service (PDO)
- * Provides prepared-statement-based MySQL connections.
- */
-
 require_once __DIR__ . '/../config.php';
 
 class Database
@@ -13,9 +8,6 @@ class Database
     private static ?PDO $instance = null;
     private static ?string $connectionError = null;
 
-    /**
-     * Get or create PDO singleton instance.
-     */
     public static function getConnection(): ?PDO
     {
         if (self::$instance !== null) {
@@ -36,6 +28,20 @@ class Database
             PDO::MYSQL_ATTR_INIT_COMMAND =>
                 'SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci'
         ];
+
+        // Enable verified TLS when a CA certificate is configured.
+        $sslCa = getenv('DB_SSL_CA');
+
+        if ($sslCa !== false && $sslCa !== '') {
+            if (!is_file($sslCa) || !is_readable($sslCa)) {
+                self::$connectionError = 'Database CA certificate is missing or unreadable.';
+                error_log('[HEISVERSE DB ERROR]: ' . self::$connectionError);
+                return null;
+            }
+
+            $options[PDO::MYSQL_ATTR_SSL_CA] = $sslCa;
+            $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = true;
+        }
 
         try {
             self::$instance = new PDO(
@@ -58,17 +64,11 @@ class Database
         }
     }
 
-    /**
-     * Check whether the database connection is active.
-     */
     public static function isConnected(): bool
     {
         return self::getConnection() !== null;
     }
 
-    /**
-     * Retrieve the last connection error.
-     */
     public static function getLastError(): ?string
     {
         return self::$connectionError;
