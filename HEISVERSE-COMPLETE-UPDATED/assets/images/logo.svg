@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Monogram Symbol -->
+  <g transform="translate(6, 4) scale(0.56)">
+    <path d="M20 16 L34 16 L34 84 L20 84 Z" fill="url(#logoGrad)"/>
+    <path d="M66 16 L80 16 L80 84 L66 84 Z" fill="url(#logoGrad)"/>
+    <path d="M34 42 L66 34 L66 48 L46 54 L66 60 L66 74 L34 62 Z" fill="url(#logoGrad)"/>
+    <circle cx="50" cy="54" r="3" fill="#ffffff" />
+  </g>
+
+  <!-- Wordmark -->
+  <text x="70" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-size="28" font-weight="900" letter-spacing="1.5" fill="url(#textGrad)">
+    HEIS<tspan fill="url(#logoGrad)">VERSE</tspan>
+  </text>
+  
+  <!-- Subtitle Tag -->
+  <text x="72" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" letter-spacing="3" fill="#64748b" text-transform="uppercase">
+    CINEMATIC PLATFORM
+  </text>
+</svg>

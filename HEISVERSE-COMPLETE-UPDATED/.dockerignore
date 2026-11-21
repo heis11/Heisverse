@@ -1,0 +1,9 @@
+.git
+.env
+*.log
+backups/*.gz
+backups/*.tar
+db_data/
+node_modules/
+.DS_Store
+Thumbs.db

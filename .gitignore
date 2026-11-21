@@ -1,0 +1,49 @@
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+**/node_modules/
+**/vendor/
+**/.heisverse-player-deps/
+
+# Database backups and dumps
+**/database-backups/
+**/backups/
+**/BACKUP-*/
+**/*-backup-*/
+**/*.sql
+!**/migrations/
+!**/migrations/*.sql
+
+# Runtime files
+**/db_data/
+**/logs/*
+**/cache/tmdb/*
+**/uploads/videos/*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local editor and code backups
+**/*.bak
+**/*.backup
+
+# Uploaded media and temporary files
+**/uploads/videos/**
+**/uploads/temp/**
+
+# Temporary backup copies (all filename formats)
+**/*backup*
+**/*before*
+**/*phase*-backup*
+
+# Temporary files
+*.tmp
+*.log
+
+# Dated backup files
+**/*.bak*

@@ -1,0 +1,8 @@
+# Block direct web access to private files (Apache / XAMPP)
+<FilesMatch "^\.(env|git)">
+    Require all denied
+</FilesMatch>
+<FilesMatch "\.(sql|md|ps1|sh|log|dockerignore)$">
+    Require all denied
+</FilesMatch>
+Options -Indexes

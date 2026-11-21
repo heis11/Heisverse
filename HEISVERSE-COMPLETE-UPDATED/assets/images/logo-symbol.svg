@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="hGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="hGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Left Pillar -->
+  <path d="M20 16 L34 16 L34 84 L20 84 Z" fill="url(#hGrad1)" rx="3"/>
+  
+  <!-- Right Pillar -->
+  <path d="M66 16 L80 16 L80 84 L66 84 Z" fill="url(#hGrad2)" rx="3"/>
+  
+  <!-- Cinematic Chevron Crossbar (Play Symbol Inspiration) -->
+  <path d="M34 42 L66 34 L66 48 L46 54 L66 60 L66 74 L34 62 Z" fill="url(#hGrad1)" filter="url(#glow)"/>
+  
+  <!-- Subtle Lens Flare Star in Center -->
+  <circle cx="50" cy="54" r="2.5" fill="#ffffff" />
+</svg>
